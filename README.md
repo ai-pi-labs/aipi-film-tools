@@ -1,5 +1,7 @@
 # AIπ｜AI圆周派 · 逐镜拉片与同步审片
 
+[English case study & delivery guide](docs/case-study.en.md)
+
 把成片整理成一镜一行的镜头表，结合完整语言记录、导演解读和复拍建议，在同一个工作台对照原片阅读，再导出同步审片视频。
 
 ![《归雾镇》第一集 · AIπ 逐镜工作台实测截图](docs/case-workbench-preview.png)
@@ -33,15 +35,19 @@
 
 本项目需要宿主能够读取素材、执行命令和保存文件。安装技能不等于已配置视频工具或声音识别；各宿主客户端的实际可用性以首次验证为准。
 
-## 已测试实片案例
+## 拉片案例
 
-[《归雾镇》第一集：案例说明](docs/case-study.md)。直接提供此前测试的原片、93 镜逐镜记录、74 条语言记录、导演分析、复拍建议、播放联动报告和同步审片视频，时长约 3 分 33 秒。
+[《归雾镇》第一集](docs/case-study.md)，时长约 3 分 33 秒。案例按一镜一行整理为 93 镜，包含 74 条语言记录、186 张关键帧，以及每镜的导演分析和复拍建议。
 
-视频来源：饭团鱼子酱（钱叔_）提供。AIπ（AI圆周派）提供拉片工具与分析工作。
+下载包包含原片、播放联动报告、同步审片视频、`study.json`、逐镜 CSV 和逐句 SRT，可用于对照看片、查阅镜头和复拍准备。
 
-在 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-guiwu-episode01-case.zip`，解压后进入 `aipi-guiwu-episode01-case/`，打开 `report.html`，或播放 `AIπ同步审片-参考版.mp4`。包内还包含 186 张关键帧、`study.json`、CSV、SRT、实际截图和验证摘要。
+在 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-guiwu-episode01-case.zip`，完整解压后进入 `aipi-guiwu-episode01-case/`：打开 `report.html` 对照原片阅读，或播放 `AIπ同步审片-参考版.mp4`。同页提供 `aipi-guiwu-episode01-case.sha256` 校验文件。
 
-这些是已有测试成果的原样整理。声音审核仍为部分完成，已知待核项随包保留，因此同步视频标记为参考版。案例原片、音轨及截图不自动适用本仓库的 MIT 许可。
+台词与唱腔仍有待核内容，定稿前请结合原片确认。
+
+[中文交付说明](docs/case-study.md) · [English delivery guide](docs/case-study.en.md)
+
+**For English readers:** The *Guiwu Town* (《归雾镇》) Episode 1 package includes 93 shots, 74 language entries, 186 keyframes, an interactive report, director's notes, reshoot suggestions and a synchronized review video. The report and analysis are in Chinese; the [English guide](docs/case-study.en.md) covers the files and viewing steps.
 
 ## 调用示例
 
