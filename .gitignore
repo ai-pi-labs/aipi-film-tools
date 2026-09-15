@@ -1,0 +1,16 @@
+# Local runs and generated media
+work/
+outputs/
+dist/
+examples/demo/
+browser-profile/
+**/browser-profile/
+**/profile/
+node_modules/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example

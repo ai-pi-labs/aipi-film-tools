@@ -1,0 +1,17 @@
+{
+  "name": "aipi-film-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AIπ｜AI圆周派：逐镜拉片与同步审片工具",
+  "author": "AIπ（AI圆周派）",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node skills/aipi-film-study/scripts/engine-test.mjs && node skills/aipi-film-study/tests/report-contract-test.mjs",
+    "test:ui": "node skills/aipi-film-study/tests/ui-check.mjs",
+    "test:sync": "node skills/aipi-sync-video/tests/verify.mjs",
+    "demo": "node examples/create-demo.mjs",
+    "package": "python3 scripts/package.py"
+  }
+}
