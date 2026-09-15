@@ -4,11 +4,12 @@ AIπ 的中文名称为 **AI圆周派**。各项目共用品牌头图和首页�
 
 ## 品牌头图
 
-使用 [aipi-banner.svg](assets/aipi-banner.svg) 作为模板，复制到项目的 `docs/assets/aipi-banner.svg`。
+使用统一的 [aipi-banner.svg](assets/aipi-banner.svg)，原样复制到项目的 `docs/assets/aipi-banner.svg`。
 
 - 保留 AIπ 与 AI圆周派标识、居中版式和边框线条。
 - 炭黑背景 `#171b20`，金色强调 `#efb760`，主文字 `#f4f5f7`，次文字 `#a9b2bd`。
-- 左上角固定为 `AI-PI-LABS`；右上角和底部三项文字替换为本项目的领域与能力。
+- 头图只展示 `AIπ`、`AI圆周派` 和 `AI-PI-LABS`，所有项目使用同一份头图。
+- 项目名称、领域、功能和能力数量写在头图下方的标题与正文中，头图不重复展示。
 - 头图使用仓库内相对路径，提供简短且有意义的替代文字；不依赖外部字体或脚本。
 
 ## 首页顺序
@@ -24,7 +25,7 @@ AIπ 的中文名称为 **AI圆周派**。各项目共用品牌头图和首页�
 
 ```html
 <p align="center">
-  <img src="docs/assets/aipi-banner.svg" alt="AIπ · AI圆周派 — 项目用途" width="100%">
+  <img src="docs/assets/aipi-banner.svg" alt="AIπ · AI圆周派 · AI-PI-LABS" width="100%">
 </p>
 
 <h1 align="center">AIπ · 项目名称</h1>

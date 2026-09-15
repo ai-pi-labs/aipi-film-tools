@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/aipi-banner.svg" alt="AIπ · AI圆周派 — 逐镜拉片与同步审片" width="100%">
+  <img src="docs/assets/aipi-banner.svg" alt="AIπ · AI圆周派 · AI-PI-LABS" width="100%">
 </p>
 
 <h1 align="center">AIπ · 逐镜拉片与同步审片</h1>

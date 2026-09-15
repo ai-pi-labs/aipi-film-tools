@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/aipi-banner.svg" alt="AIπ · AI圆周派 — Shot by shot. From study to reshoot." width="100%">
+  <img src="docs/assets/aipi-banner.svg" alt="AIπ · AI圆周派 · AI-PI-LABS" width="100%">
 </p>
 
 <h1 align="center">AIπ · Film Study &amp; Synchronized Review</h1>

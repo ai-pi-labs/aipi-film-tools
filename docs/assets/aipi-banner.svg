@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="350" viewBox="0 0 1280 350" role="img" aria-labelledby="title desc">
   <title id="title">AIπ · AI圆周派</title>
-  <desc id="desc">Shot by shot. From study to reshoot. A film study and synchronized review toolkit.</desc>
+  <desc id="desc">AIπ · AI圆周派 · AI-PI-LABS.</desc>
   <rect width="1280" height="350" rx="18" fill="#171b20"/>
   <g fill="none" stroke="#343c47" stroke-width="1.5">
     <path d="M48 88V48h40M1192 48h40v40M48 262v40h40M1192 302h40v-40"/>
@@ -8,14 +8,8 @@
   </g>
   <g fill="#a9b2bd" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="3">
     <text x="144" y="63">AI-PI-LABS</text>
-    <text x="1136" y="63" text-anchor="end">FILM TOOLS</text>
   </g>
   <text x="640" y="191" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="142" font-weight="800" letter-spacing="-7" fill="#f4f5f7">AI<tspan fill="#efb760">π</tspan></text>
   <text x="640" y="240" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="500" letter-spacing="5" fill="#f4f5f7">AI圆周派</text>
-  <g font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="1" fill="#a9b2bd">
-    <text x="144" y="310">SHOT STUDY</text>
-    <text x="640" y="310" text-anchor="middle">DIRECTOR'S NOTES</text>
-    <text x="1136" y="310" text-anchor="end">SYNC REVIEW</text>
-  </g>
   <rect x="601" y="274" width="78" height="4" rx="2" fill="#efb760"/>
 </svg>
