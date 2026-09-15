@@ -148,7 +148,7 @@ Compress-Archive -LiteralPath skills\aipi-sync-video -DestinationPath claude-upl
 
 截至本文核对日期，官方说明 Cowork 的云端模式仍为 beta：代码和 shell 在 Anthropic 的隔离环境执行，本地文件、浏览器和电脑操作通过保持在线的桌面应用访问。能打开本地影片，并不能证明它可以调用本机的 FFmpeg 或 Chrome。[官方 Cowork 运行方式](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork)
 
-让 Cowork 先报告当前执行系统、工具绝对路径、可读取的原片路径以及可写输出目录，再跑合成示例。若账户显示旧的本地会话模式，同样以实际检查结果为准；不要推定宿主已有依赖，也不要把 Cowork 内置浏览器视为本项目可直接启动的无头 Chrome。缺少必要能力时，使用本地 Claude Code 执行视频处理，Cowork 继续处理可访问的分析数据。
+让 Cowork 先报告当前执行系统、工具绝对路径、可读取的原片路径以及可写输出目录，再执行下文的入口与短素材验证。若账户显示旧的本地会话模式，同样以实际检查结果为准；不要推定宿主已有依赖，也不要把 Cowork 内置浏览器视为本项目可直接启动的无头 Chrome。缺少必要能力时，使用本地 Claude Code 执行视频处理，Cowork 继续处理可访问的分析数据。
 
 ## 运行工具与最小验证
 
@@ -162,7 +162,7 @@ ffmpeg -version
 ffprobe -version
 ```
 
-FFmpeg 应包含本项目所需编码器，例如合成示例使用 `libx264` 和 AAC。Chrome 应能创建独立无头进程。中文字体可使用系统中文字体或 Noto Sans CJK；最终以导出画面没有方框、缺字为准。
+FFmpeg 应包含本项目所需编码器，常规 MP4 导出使用 `libx264` 和 AAC。Chrome 应能创建独立无头进程。中文字体可使用系统中文字体或 Noto Sans CJK；最终以导出画面没有方框、缺字为准。
 
 同步工具支持 `--chrome` 和 `AIPI_CHROME` 指定浏览器。当前自动查找列表未覆盖所有 Windows 安装位置，Windows 建议显式指定实际存在的可执行文件，例如：
 
@@ -171,24 +171,18 @@ $env:AIPI_CHROME = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
 Test-Path -LiteralPath $env:AIPI_CHROME
 ```
 
-若只装了技能 ZIP，先另行下载完整仓库，下面的 `examples/` 和 `package.json` 不属于独立技能包。**从完整仓库根目录执行**：
+先从实际安装目录检查入口，将占位目录替换为 Claude 实际读取的技能位置：
 
 ```sh
-node skills/aipi-film-study/scripts/engine.mjs --help
-node skills/aipi-sync-video/scripts/export.mjs --help
-npm run demo
-node skills/aipi-film-study/scripts/engine.mjs validate examples/demo/study.json --video examples/demo/demo.mp4 --check-assets
+node "<逐镜技能目录>/scripts/engine.mjs" --help
+node "<同步技能目录>/scripts/export.mjs" --help
 ```
 
-预期生成 `examples/demo/report.html`、`study.json`、`demo.mp4` 与 6 张关键帧；数据为 3 镜、4 条合成字幕，普通校验通过，仍保留待核状态。打开报告，播放原片并点击镜号，确认能定位、跟随和阅读全文。这个演示只验证工具链与呈现，不构成影片内容审核。
+只想查看成果，可从 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-guiwu-episode01-case.zip` 与 `aipi-guiwu-episode01-case.sha256`。解压进入 `aipi-guiwu-episode01-case/`，打开 `report.html` 或 `AIπ同步审片-参考版.mp4`。只装技能的用户也可直接查看现有文件，无需完整源码或重新生成案例。
 
-进一步验证 Chrome、中文字体和同步合成：
+这个实片案例复用已测试的《归雾镇》第一集成果，约 3 分 33 秒、93 镜、74 条语言记录、5104 帧。播放报告并点击镜号，检查定位、跟随和全文；播放同步视频检查中文与原画幅。全音轨审核尚未完成，现有字幕与技术检查不能证明全部对白已听核，文件继续保留参考状态。文件清单与核对范围见[实片案例](case-study.md)。
 
-```sh
-node skills/aipi-sync-video/scripts/export.mjs examples/demo/study.json --video examples/demo/demo.mp4 --out examples/demo/claude-reference.mp4 --work examples/demo/claude-render --reference --panel-px 1000 --font 24
-```
-
-这里必须显式使用 `--reference`，因为演示故意没有已完成的审核记录。成片应显示参考状态，中文可读、画面不裁切。对同一示例执行 `validate ... --production` **应该失败**；不能修改 `pending` / `uncertain` 标签来让它通过。
+查看已有成果只能检查文件呈现；要确认 Claude 当前环境能处理视频，还需按[使用流程](usage.md)执行一段短素材的探测、抽帧、报告与同步导出。开发或依赖排查也可在完整源码根目录运行 `npm run demo`：它只生成合成测试素材，用于工具自测，不是公开实片案例。该命令需要的 `examples/` 和 `package.json` 不在独立技能 ZIP 内。自测数据保留待核，导出时需明确选择 `--reference`，不能修改 `pending` / `uncertain` 来通过生产检查。
 
 以上命令既可由你执行，也可交给 Claude 执行。确认 Claude 实际运行了命令并提供文件与检查结果；“识别到技能”“读过 SKILL.md”只能证明加载成功。
 
@@ -214,9 +208,9 @@ node skills/aipi-sync-video/scripts/export.mjs examples/demo/study.json --video 
 
 > 使用 aipi-film-study（AI圆周派 · 逐镜拉片）。先列出你实际加载的技能路径、执行环境及 Node、FFmpeg、ffprobe 的版本，并检查是否能读取我提供的原片。具备条件后按一镜一行制作报告，全文保留语言记录、导演分析和复拍建议。缺少听辨或字幕识别能力时，明确记录未完成范围，不猜对白。
 
-只想验证同步工具时可说：
+查看已交付的实片案例时可说：
 
-> 使用 aipi-sync-video，把合成示例导出为参考版同步视频。允许使用 --reference，保留所有待核标记；检查中文字体、源帧数与最后一帧。
+> 读取《归雾镇》第一集案例目录，复用现有 report.html 和 AIπ同步审片-参考版.mp4。检查视频播放、镜号联动、全文语言与导演分析的可读性，并说明全音轨审核仍未完成的范围。
 
 本项目**不内置 ASR / OCR 模型**，安装技能不会自动增加语音转写或字幕识别服务。要交付完整拉片，还需宿主实际可用的听辨 / 识别能力与逐段人工或代理核对；单靠抽取关键帧，不能宣称全片声音已审完。
 

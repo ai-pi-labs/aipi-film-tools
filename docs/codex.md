@@ -105,12 +105,15 @@ $aipi-sync-video
 请确认已加载 aipi-film-study 与 aipi-sync-video，并报告各自 SKILL.md 的绝对路径。
 运行 node --version、ffmpeg -version、ffprobe -version，核对 Chrome/Chromium 的位置。
 从实际技能目录运行 scripts/engine.mjs --help 与 scripts/export.mjs --help。
-若工作区已有完整源码，按仓库 docs/case-study.md 跑合成案例，保留参考状态并报告检查结果。
+若工作区已有《归雾镇》第一集案例包，打开现有报告与同步参考视频，
+检查资源、播放和镜号联动，保留尚未完成全音轨审核的参考状态。
 ```
 
-安装器和独立技能 ZIP 不包含仓库的 `docs/`、`examples/` 或 `package.json`。要自行生成案例，请另行克隆或下载完整源码，并从仓库根目录运行；只想查看交付效果，可从 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest)下载 `aipi-demo-case.zip`，进入解压后的 `aipi-demo-case/` 打开报告与同步视频。
+只想查看交付效果，可从 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-guiwu-episode01-case.zip` 与 `aipi-guiwu-episode01-case.sha256`。解压进入 `aipi-guiwu-episode01-case/`，打开 `report.html` 或 `AIπ同步审片-参考版.mp4`；只安装了技能的用户也可直接查看，无需下载源码或重新生成案例。
 
-如果只需验证安装，不必先编码视频，两个 `--help` 成功即可证明脚本入口可用；完整视频能力仍要在当前执行环境运行案例，查看预先生成的案例不能替代这一检查。查看 [使用说明](usage.md) 了解生产验收条件。
+这个实片案例复用已测试成果，约 3 分 33 秒、93 镜、74 条语言记录、5104 帧。全音轨审核尚未完成，现有语言记录与技术检查不能证明全部对白已经听核。具体文件与核对范围见[实片案例](case-study.md)。
+
+如果只需验证安装，不必先编码视频，两个 `--help` 成功即可证明脚本入口可用；完整视频能力仍要在当前执行环境处理一段短素材，查看预先生成的案例不能替代这一检查。开发或依赖排查也可在完整源码根目录运行 `npm run demo`：它只生成合成测试素材，用于工具自测，不是公开实片案例。安装器和独立技能 ZIP 不包含该命令需要的 `examples/` 或 `package.json`。查看 [使用说明](usage.md) 了解生产验收条件。
 
 ## 更新、停用与排错
 
@@ -120,4 +123,4 @@ $aipi-sync-video
 - 没有写入权限：把输出放入已授权的项目工作目录；按宿主提示授权需要的路径。
 - 停用可按官方 `[[skills.config]]` 配置指定技能路径与 `enabled = false`，再重启；手动卸载则移出对应目录。[官方停用说明](https://learn.chatgpt.com/docs/build-skills#enable-or-disable-local-codex-skills)
 
-[安装总览](installation.md) · [完整案例](case-study.md)
+[安装总览](installation.md) · [实片案例](case-study.md)

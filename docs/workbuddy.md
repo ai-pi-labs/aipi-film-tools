@@ -86,21 +86,17 @@ node "<同步技能目录>/scripts/export.mjs" --help
 
 已导入 ZIP 的用户可以给 WorkBuddy 一段 2–10 秒、零起点、恒定帧率的本地视频，要求它执行 `probe → detect → frames → report`，读取 `frames` 返回的新数据文件后再生成报告。打开生成的 HTML，确认原片与帧图可见，播放时镜号和列表随时间变化。自动检测只是候选底稿，空白分析和待核声音应继续显示为未完成。
 
-也可以下载或克隆[完整仓库](https://github.com/ai-pi-labs/aipi-film-tools)，在仓库根目录执行项目自带演示。演示脚本仅随源码仓库提供，不在单个技能 ZIP 内：
+只想查看成果，可从 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-guiwu-episode01-case.zip` 与 `aipi-guiwu-episode01-case.sha256`。解压进入 `aipi-guiwu-episode01-case/`，打开 `report.html` 或 `AIπ同步审片-参考版.mp4`。已导入技能 ZIP 的用户可直接查看这些文件，无需另取源码或重新生成案例。
+
+这个实片案例复用已测试的《归雾镇》第一集成果，约 3 分 33 秒、93 镜、74 条语言记录、5104 帧。实际播放报告和同步视频，检查原画幅、中文、镜号联动及全文。全音轨审核尚未完成，现有语言记录与技术检查不能证明全部对白已经听核，因此保留参考状态。具体文件与核对范围见[实片案例](case-study.md)。
+
+开发或依赖排查时，可下载或克隆[完整仓库](https://github.com/ai-pi-labs/aipi-film-tools)，在仓库根目录执行：
 
 ```sh
 npm run demo
 ```
 
-它会生成 12 秒、3 镜的几何画面演示，输出到 `examples/demo/`。打开 `examples/demo/report.html`，应能看到原片、6 张参考帧、4 条语言记录，以及跨镜全文。`demo-check.json` 的普通结构检查应通过，`productionReady` 应为 `false`；演示明确保留待核状态。
-
-继续验证同步技能，运行：
-
-```sh
-node skills/aipi-sync-video/scripts/export.mjs examples/demo/study.json --video examples/demo/demo.mp4 --out examples/demo/review-reference.mp4 --work work/demo-sync --reference --panel-px 1000 --font 24
-```
-
-浏览器发现失败时，追加 `--chrome "<Chrome 或 Chromium 可执行文件路径>"`。检查输出 MP4 及同名 `.manifest.json`，实际播放确认画面、中文和切镜信息正常，参考状态可见。演示使用静音音轨与画面字幕，只能验证这条运行链路，不能验证真实影片的对白听写能力。
+它只生成合成测试素材，用于工具自测，不是公开实片案例；输出在 `examples/demo/`，保留待核状态。这个脚本仅随源码提供，不在单个技能 ZIP 内，也不能验证真实影片的对白听写能力。
 
 ## 5. 保存、更新与卸载
 
@@ -117,7 +113,7 @@ node skills/aipi-sync-video/scripts/export.mjs examples/demo/study.json --video 
 | 把 ZIP 拖到普通聊天附件里 | 可作为这次任务的文件输入；不能据此认定已完成技能安装。去技能管理页导入，并检查已安装列表及启用状态。 |
 | 已安装，但回复只给泛泛分析 | 明确点名技能，要求读取实际 `SKILL.md`、执行入口并给出生成文件；检查当前任务是否允许执行本地命令。 |
 | 终端可用，WorkBuddy 报找不到工具 | 在 WorkBuddy 自己的命令环境重新查 PATH 和可执行文件；浏览器可显式指定。 |
-| 字幕完整，但生产检查仍失败 | 阅读具体阻断项。字幕证据不能替代全音轨核对，演示和初稿保留待核是预期行为。 |
+| 字幕完整，但生产检查仍失败 | 阅读具体阻断项。字幕证据不能替代全音轨核对；实片案例尚未完成全音轨审核，保留参考状态。 |
 | 可变帧率或非零起点视频不能同步导出 | 当前同步路线要求零起点 CFR。需要时生成独立规范副本，再重新分析；不能直接套用旧时间码。 |
 
 目前已验证的是本项目的包结构、解压入口与开发环境中的引擎、报告、同步流程。WorkBuddy 的模型选技、客户端权限、浏览器发现和各操作系统环境仍需按本文在目标设备确认；本指南不把官方支持本地导入等同于本项目已完成 WorkBuddy 全流程实测。

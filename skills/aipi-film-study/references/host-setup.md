@@ -24,7 +24,7 @@ ffprobe -version
 
 完整流程统一准备 Node.js 22+、FFmpeg、ffprobe、Chrome/Chromium 和中文字体；只执行拉片核心可使用 Node.js 18+。无 npm 运行依赖。浏览器位置可由同步导出参数 --chrome 或 AIPI_CHROME 环境变量指定。
 
-先从当前技能目录运行对应入口的 --help：逐镜拉片为 scripts/engine.mjs，同步审片为 scripts/export.mjs。再用短素材或 [公开合成案例](https://github.com/ai-pi-labs/aipi-film-tools/blob/main/docs/case-study.md) 检查实际输出。
+先从当前技能目录运行对应入口的 --help：逐镜拉片为 scripts/engine.mjs，同步审片为 scripts/export.mjs。再用短素材或 [已测试实片案例（保留待核项）](https://github.com/ai-pi-labs/aipi-film-tools/blob/main/docs/case-study.md) 检查实际输出。
 
 技能导入不会安装媒体工具，也不会增加 ASR、OCR 或音频理解能力。视觉理解、语言转写和核对由宿主已有能力或用户选定的服务承担；无证据时保留待核，不用“脚本成功”代替内容审核。
 

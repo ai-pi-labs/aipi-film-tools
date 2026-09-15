@@ -12,7 +12,6 @@
     "test:ui": "node skills/aipi-film-study/tests/ui-check.mjs",
     "test:sync": "node skills/aipi-sync-video/tests/verify.mjs",
     "demo": "node examples/create-demo.mjs",
-    "case": "node examples/build-case.mjs",
     "package": "python3 scripts/package.py"
   }
 }

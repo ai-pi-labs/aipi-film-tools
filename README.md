@@ -2,7 +2,9 @@
 
 把成片整理成一镜一行的镜头表，结合完整语言记录、导演解读和复拍建议，在同一个工作台对照原片阅读，再导出同步审片视频。
 
-![AIπ 逐镜工作台，使用项目自带合成示例](docs/workbench-demo.png)
+![《归雾镇》第一集 · AIπ 逐镜工作台实测截图](docs/case-workbench-preview.png)
+
+视频来源：饭团鱼子酱（钱叔_）提供。
 
 ## 两个技能
 
@@ -31,18 +33,15 @@
 
 本项目需要宿主能够读取素材、执行命令和保存文件。安装技能不等于已配置视频工具或声音识别；各宿主客户端的实际可用性以首次验证为准。
 
-## 完整案例
+## 已测试实片案例
 
-[三种构图节奏：案例说明](docs/case-study.md)提供一套 12 秒、3 镜、4 条画面字幕的合成素材，展示一镜一行、跨镜续句、导演分析、复拍建议与同步导出。
+[《归雾镇》第一集：案例说明](docs/case-study.md)。直接提供此前测试的原片、93 镜逐镜记录、74 条语言记录、导演分析、复拍建议、播放联动报告和同步审片视频，时长约 3 分 33 秒。
 
-在 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-demo-case.zip`，完整解压后进入 `aipi-demo-case/`，打开 `report.html`，或播放 `review.mp4`。案例还包含原视频、6 张关键帧、`study.json`、CSV、SRT 和验证摘要。该片使用静音音轨，明确保留参考状态，用于验证工作流程，不是声称完成真实影片听写的样例。
+视频来源：饭团鱼子酱（钱叔_）提供。AIπ（AI圆周派）提供拉片工具与分析工作。
 
-开发者可在安装好依赖后复现：
+在 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-guiwu-episode01-case.zip`，解压后进入 `aipi-guiwu-episode01-case/`，打开 `report.html`，或播放 `AIπ同步审片-参考版.mp4`。包内还包含 186 张关键帧、`study.json`、CSV、SRT、实际截图和验证摘要。
 
-```sh
-npm run demo    # 生成原片、数据与联动报告
-npm run case    # 另生成同步视频、表格、字幕和可下载案例包
-```
+这些是已有测试成果的原样整理。声音审核仍为部分完成，已知待核项随包保留，因此同步视频标记为参考版。案例原片、音轨及截图不自动适用本仓库的 MIT 许可。
 
 ## 调用示例
 
@@ -54,13 +53,13 @@ npm run case    # 另生成同步视频、表格、字幕和可下载案例包
 
 完整项目需要 **Node.js 22+、FFmpeg、ffprobe**；同步导出和网页回归还需要 **Chrome/Chromium** 与中文字体。没有 npm 运行依赖，不需要 `npm install`。仅使用拉片核心时 Node.js 18+ 即可；打包安装 ZIP 需要 Python 3。
 
-先生成本项目的三镜合成示例：
+开发者可先生成三镜合成测试素材，检查工具链：
 
 ```sh
 npm run demo
 ```
 
-打开生成的 `examples/demo/report.html`。示例素材由 FFmpeg 生成，不包含用户影片；演示文本明确保留示例和待核标记。
+打开生成的 `examples/demo/report.html`。这是 FFmpeg 生成的开发测试素材，仅用于工具自测；公开实片案例请下载上面的《归雾镇》案例包。
 
 处理自己的原片：
 

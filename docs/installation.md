@@ -24,9 +24,9 @@
 | `aipi-sync-video.zip` | 同上 | 根目录有 `SKILL.md` |
 | `aipi-film-study-claude.zip` | Claude 技能上传；Codex 等也可解压安装完整文件夹 | `aipi-film-study/SKILL.md` |
 | `aipi-sync-video-claude.zip` | 同上 | `aipi-sync-video/SKILL.md` |
-| `aipi-demo-case.zip` | 完整演示案例，无需作为技能安装 | `aipi-demo-case/` 内含视频、数据、报告、表格、字幕与同步视频 |
+| `aipi-guiwu-episode01-case.zip` | 《归雾镇》第一集实片案例，无需作为技能安装 | `aipi-guiwu-episode01-case/` 内含原片、数据、报告、表格、字幕与同步参考视频 |
 | `SHA256SUMS`、`manifest.json` | 核对四个技能包与包内文件 | 校验文本 |
-| `aipi-demo-case.sha256` | 核对案例包 | 校验文本 |
+| `aipi-guiwu-episode01-case.sha256` | 核对实片案例包 | 校验文本 |
 
 两种技能 ZIP 的执行脚本和工作流正文相同。平铺包为 WorkBuddy 额外加入根级 `description_zh`、`description_en`、`version`、`author` 等字段；源码目录和带顶层目录的包使用标准 `metadata`。不要把整个源码仓库 ZIP 当作一个技能导入，也不要把两个技能解压进同一个文件夹。正确目录关系为：
 
@@ -46,10 +46,12 @@
 
 ## 从安装到首次使用
 
+只想查看成果时，下载上述实片案例包及校验文件，解压进入 `aipi-guiwu-episode01-case/`，打开 `report.html` 或 `AIπ同步审片-参考版.mp4`。案例复用已测试的《归雾镇》第一集成果：约 3 分 33 秒、93 镜、74 条语言记录、5104 帧。当前仍是参考版，尚未完成全音轨审核；这些数量不代表对白已经全部听核。案例内容与使用边界见[实片案例说明](case-study.md)。
+
 1. 按 [运行环境](prerequisites.md) 检查 Node.js 22+、FFmpeg、ffprobe；同步视频另需 Chrome/Chromium 和中文字体。
 2. 按宿主指南安装两个技能，开启一个能执行命令、读写项目文件的任务。
 3. 先让代理报告实际加载的 `SKILL.md` 路径，并执行两个入口的 `--help`。
-4. 按 [使用流程](usage.md) 处理影片，或先下载 [完整案例](case-study.md) 看结果。
+4. 按 [使用流程](usage.md) 处理影片，或先下载 [实片案例](case-study.md) 看结果。
 5. 生产交付前完成画面与声音核对；命令成功并不证明对白没有遗漏。
 
 ## 更新与卸载
@@ -60,6 +62,6 @@
 
 ## 验证范围
 
-核心及报告契约在 macOS 本机与 Linux CI 验证；同步导出、浏览器交互与完整案例在本机验证。Claude、WorkBuddy、Cursor、Copilot 的安装路线依据官方文档整理，未逐一完成客户端内端到端验收。Windows、WSL、容器和远程机器需要各自执行最小验证。
+核心及报告契约在 macOS 本机与 Linux CI 验证；同步导出、浏览器交互与实片案例的技术流程在本机验证。Claude、WorkBuddy、Cursor、Copilot 的安装路线依据官方文档整理，未逐一完成客户端内端到端验收。Windows、WSL、容器和远程机器需要各自执行最小验证。
 
-[返回首页](../README.md) · [使用流程与提示词](usage.md) · [完整案例](case-study.md)
+[返回首页](../README.md) · [使用流程与提示词](usage.md) · [实片案例](case-study.md)

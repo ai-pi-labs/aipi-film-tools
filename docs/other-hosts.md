@@ -88,7 +88,9 @@ node "<逐镜技能目录>/scripts/engine.mjs" --help
 node "<同步技能目录>/scripts/export.mjs" --help
 ```
 
-帮助正常退出只证明入口可加载。继续按[使用流程](usage.md)跑一段短素材，或在源码仓库执行 `npm run demo`，打开生成的 `examples/demo/report.html` 检查播放、帧图和镜号联动。示例保留待核，生产检查未通过是预期结果；依赖检查通过不等于声音审核已完成。
+帮助正常退出只证明入口可加载。继续按[使用流程](usage.md)处理一段短素材，检查播放、帧图和镜号联动。开发或依赖排查也可在完整源码根目录执行 `npm run demo`：它只生成合成测试素材，用于工具自测，不是公开实片案例。依赖检查通过不等于声音审核已完成。
+
+只想查看已有成果，可从 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-guiwu-episode01-case.zip` 与 `aipi-guiwu-episode01-case.sha256`，无需完整源码。解压进入 `aipi-guiwu-episode01-case/`，打开 `report.html` 或 `AIπ同步审片-参考版.mp4`。案例复用已测试的《归雾镇》第一集成果，约 3 分 33 秒、93 镜、74 条语言记录、5104 帧；全音轨审核仍未完成，保留参考状态。文件清单与核对范围见[实片案例](case-study.md)。
 
 ## 本机、SSH 与云端
 

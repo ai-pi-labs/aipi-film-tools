@@ -7,8 +7,9 @@ npm test
 npm run test:ui -- --chrome /path/to/chrome --artifacts work/ui-check
 npm run test:sync -- --out work/sync-check
 npm run package
-npm run case
 ```
+
+开发者可用 `npm run demo` 生成三镜合成测试素材，仅做工具自测；公开实片案例使用已测试的《归雾镇》成果，见[案例说明](case-study.md)。
 
 同步测试的浏览器位置可通过 `AIPI_CHROME` 指定。测试会现场生成合成视频；素材和浏览器配置都写到忽略的生成目录。可选 UI 实片测试传入 `--study /path/to/study.json`，会根据数据动态选择检查镜头。
 
@@ -29,4 +30,6 @@ GitHub Actions 的默认任务执行核心引擎、报告契约和打包检查�
 
 ## 发布附件
 
-`npm run package` 生成四个技能 ZIP 及其 `SHA256SUMS`、`manifest.json`；不包含依赖工具或影片。`npm run case` 另生成合成案例 ZIP 与独立 `.sha256`，需要本地浏览器并执行媒体验证，不属于默认 CI 的浏览器检查。
+`npm run package` 生成四个技能 ZIP 及其 `SHA256SUMS`、`manifest.json`，不包含依赖工具或影片。实片案例单独发布为 `aipi-guiwu-episode01-case.zip` 和 `.sha256`，直接整理既有测试成果。发布前检查文件指纹、移动解压及相对资源，并在验证摘要中区分本次打包检查与历史媒体验收；不修改内容审核状态。
+
+影片、帧图等大文件通过 Release 附件分发，仓库只保留说明和现有成果截图。公开包剔除含本机绝对路径的原始调试记录，提供可公开的验收摘要；这不等于补齐了尚未完成的听审。

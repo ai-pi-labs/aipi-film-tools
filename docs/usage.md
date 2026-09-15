@@ -1,6 +1,8 @@
 # 使用流程与可复制提示词
 
-先完成 [宿主安装](installation.md) 和 [依赖检查](prerequisites.md)。首次体验可直接下载 [完整合成案例](case-study.md)。下文的提示词对多个宿主通用；点名方式按各宿主指南调整。
+先完成 [宿主安装](installation.md) 和 [依赖检查](prerequisites.md)。首次查看成果可直接下载 [《归雾镇》第一集实片案例](case-study.md)。下文的提示词对多个宿主通用；点名方式按各宿主指南调整。
+
+从 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-guiwu-episode01-case.zip` 与 `aipi-guiwu-episode01-case.sha256`，解压进入 `aipi-guiwu-episode01-case/`，打开 `report.html` 或 `AIπ同步审片-参考版.mp4`。案例复用已测试成果，无需源码或重新生成：约 3 分 33 秒、93 镜、74 条语言记录、5104 帧。全音轨审核尚未完成，因此保留参考状态；已记录的语言数量不代表全部对白已经听核。
 
 ## 1. 提供原片和输出位置
 
@@ -91,4 +93,4 @@ node skills/aipi-sync-video/scripts/export.mjs work/study.frames.json --video in
 | 同步导出提示文字过长 | 依据 `--help` 调整面板尺寸；不删掉对白或把导演文字截断 |
 | Claude/Cowork/云端能加载技能但不能编码 | 按当前执行环境检查工具，必要时把编码步骤移到本地，说明剩余边界 |
 
-[数据约定](../skills/aipi-film-study/references/study-format.md) · [语言核对方法](../skills/aipi-film-study/references/review-method.md) · [完整案例](case-study.md)
+[数据约定](../skills/aipi-film-study/references/study-format.md) · [语言核对方法](../skills/aipi-film-study/references/review-method.md) · [实片案例](case-study.md)
