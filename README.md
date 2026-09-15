@@ -2,7 +2,7 @@
   <img src="docs/assets/aipi-banner.svg" alt="AIπ · AI圆周派 · AI-PI-LABS" width="100%">
 </p>
 
-<h1 align="center">AIπ · 逐镜拉片与同步审片</h1>
+<h1 align="center">逐镜拉片与同步审片</h1>
 
 <p align="center"><strong>逐镜读懂画面，把分析带到拍摄现场。</strong><br>Shot by shot. From study to reshoot.</p>
 
@@ -22,10 +22,6 @@
   <a href="docs/case-study.md"><strong>查看案例</strong></a> ·
   <a href="docs/usage.md"><strong>使用说明</strong></a>
 </p>
-
----
-
-把成片整理成一镜一行的镜头表，在同一个工作台对照原片阅读对白、导演分析和复拍建议，再导出带逐镜说明的同步审片视频。
 
 ## 先看效果
 
@@ -51,6 +47,8 @@ https://github.com/user-attachments/assets/1bc328aa-76be-46f8-963d-f42e6e55c0a1
 台词与唱腔仍有待核内容，定稿前请结合原片确认。
 
 ## 两个技能，一套工作流
+
+把成片整理成一镜一行的镜头表，在同一个工作台对照原片阅读对白、导演分析和复拍建议，再导出带逐镜说明的同步审片视频。
 
 | 技能 | 你能得到什么 |
 | --- | --- |

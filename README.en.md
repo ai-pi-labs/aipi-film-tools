@@ -2,7 +2,7 @@
   <img src="docs/assets/aipi-banner.svg" alt="AIπ · AI圆周派 · AI-PI-LABS" width="100%">
 </p>
 
-<h1 align="center">AIπ · Film Study &amp; Synchronized Review</h1>
+<h1 align="center">Film Study &amp; Synchronized Review</h1>
 
 <p align="center"><strong>Shot by shot. From study to reshoot.</strong></p>
 
@@ -21,10 +21,6 @@
   <a href="docs/case-study.en.md">Case study</a> ·
   <a href="docs/usage.md">Usage</a>
 </p>
-
----
-
-Turn a finished film into a shot table with **one shot per row**, full text for each recorded line, director's notes, and practical reshooting suggestions. Read alongside the source video in an interactive workbench, or watch a synchronized review video.
 
 ## See it in use
 
@@ -48,6 +44,8 @@ Download `aipi-guiwu-episode01-case.zip` from the [latest release](https://githu
 The report, analysis, and subtitles are in Chinese; the [English case guide](docs/case-study.en.md) explains the files and viewing steps. Dialogue and sung passages still contain items to confirm. Check them against the source video before finalizing a script.
 
 ## Two skills, one workflow
+
+Turn a finished film into a shot table with **one shot per row**, full text for each recorded line, director's notes, and practical reshooting suggestions. Read alongside the source video in an interactive workbench, or watch a synchronized review video.
 
 | Skill | What it does |
 | --- | --- |
