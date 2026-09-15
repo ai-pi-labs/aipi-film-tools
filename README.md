@@ -17,7 +17,7 @@
 
 ## 安装技能
 
-在本仓库的 **Releases** 下载 `aipi-film-study.zip` 和 `aipi-sync-video.zip`。两个 ZIP 的根目录均为 `SKILL.md`，并附带源码、测试及 MIT 许可证。
+在 [Releases 下载页](https://github.com/EthanYu-YW/aipi-film-tools/releases/latest)下载 `aipi-film-study.zip` 和 `aipi-sync-video.zip`。两个 ZIP 的根目录均为 `SKILL.md`，并附带源码、测试及 MIT 许可证。
 
 在 WorkBuddy 中进入“技能 → 添加技能 → 上传技能”，分别导入并启用。安装目录由宿主管理。当前已验证 ZIP 格式和本机命令执行，WorkBuddy 客户端内的导入与调用仍需实际检查。[安装与依赖说明](docs/installation.md)
 
