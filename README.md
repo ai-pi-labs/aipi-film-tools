@@ -140,3 +140,5 @@ node skills/aipi-sync-video/scripts/export.mjs work/study.frames.json --video in
 ## 开源许可
 
 Copyright © 2026 **AIπ（AI圆周派）**。应用代码、界面与工作流文档采用 [MIT License](LICENSE)。外部运行工具和用户素材各自保留其权利，见 [第三方说明](THIRD_PARTY_NOTICES.md)。
+
+[AIπ 首页规范](docs/brand-guide.md)

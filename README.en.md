@@ -142,3 +142,5 @@ Open `examples/demo/report.html`. This command generates a three-shot synthetic 
 ## License
 
 Copyright © 2026 **AIπ（AI圆周派）**. Application code, UI, and workflow documentation are available under the [MIT License](LICENSE). External tools and media retain their own rights; see [Third-party notices](THIRD_PARTY_NOTICES.md).
+
+[AIπ README guidelines](docs/brand-guide.md)
