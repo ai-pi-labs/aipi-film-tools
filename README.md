@@ -17,11 +17,32 @@
 
 ## 安装技能
 
-在 [Releases 下载页](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest)下载 `aipi-film-study.zip` 和 `aipi-sync-video.zip`。两个 ZIP 的根目录均为 `SKILL.md`，并附带源码、测试及 MIT 许可证。
+从 [Releases 下载页](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest)选择对应安装包，或复制源码中 `skills/` 下的两个完整技能目录。四个技能 ZIP 包含相同的两套执行代码；平铺包补充 WorkBuddy 所需元数据，`*-claude.zip` 使用标准元数据并保留技能名顶层目录，供 Claude 上传或解压安装。
 
-在 WorkBuddy 中进入“技能 → 添加技能 → 上传技能”，分别导入并启用。安装目录由宿主管理。当前已验证 ZIP 格式和本机命令执行，WorkBuddy 客户端内的导入与调用仍需实际检查。[安装与依赖说明](docs/installation.md)
+| 宿主 | 安装入口 | 详细说明 |
+| --- | --- | --- |
+| Codex 桌面本地任务 / CLI / IDE | 内置安装器，或用户 / 项目 `.agents/skills/` | [Codex 安装与使用](docs/codex.md) |
+| Claude Code | 用户 / 项目 `.claude/skills/` | [Claude Code 指南](docs/claude.md) |
+| Claude 网页 / 桌面聊天 / Cowork | 上传 `*-claude.zip`；先确认实际会话具备运行依赖 | [Claude 各入口说明](docs/claude.md) |
+| WorkBuddy | 技能管理中上传平铺 ZIP 并启用 | [WorkBuddy 指南](docs/workbuddy.md) |
+| Cursor / VS Code Copilot | 复制到对应技能目录 | [其他宿主指南](docs/other-hosts.md) |
 
-支持本地 `SKILL.md` 的其他代理宿主，可加载 `skills/` 下的对应目录。宿主仍需要能读取本地文件并执行所需运行工具。
+[安装总览与选包](docs/installation.md) · [依赖配置](docs/prerequisites.md) · [使用流程与排错](docs/usage.md)
+
+本项目需要宿主能够读取素材、执行命令和保存文件。安装技能不等于已配置视频工具或声音识别；各宿主客户端的实际可用性以首次验证为准。
+
+## 完整案例
+
+[三种构图节奏：案例说明](docs/case-study.md)提供一套 12 秒、3 镜、4 条画面字幕的合成素材，展示一镜一行、跨镜续句、导演分析、复拍建议与同步导出。
+
+在 [Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载 `aipi-demo-case.zip`，完整解压后进入 `aipi-demo-case/`，打开 `report.html`，或播放 `review.mp4`。案例还包含原视频、6 张关键帧、`study.json`、CSV、SRT 和验证摘要。该片使用静音音轨，明确保留参考状态，用于验证工作流程，不是声称完成真实影片听写的样例。
+
+开发者可在安装好依赖后复现：
+
+```sh
+npm run demo    # 生成原片、数据与联动报告
+npm run case    # 另生成同步视频、表格、字幕和可下载案例包
+```
 
 ## 调用示例
 

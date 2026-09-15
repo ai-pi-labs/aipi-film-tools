@@ -1,13 +1,12 @@
 ---
 name: aipi-sync-video
-display_name: AI圆周派 · 同步审片
 description: 将AIπ逐镜数据与原片合成为同步审片视频，完整显示当前镜头的画面记录、语言、导演分析与复拍建议，保留源画幅和声音，检查单帧切镜及文字可读性。
-description_zh: 从AIπ拉片数据导出带完整逐镜说明和原声的同步审片视频。
-description_en: Export source video with frame-accurate AIpi shot notes, dialogue, director analysis and reshoot guidance.
-version: 1.0.0
-author: AIπ
-allowed-tools: Read, Write, Edit, Bash, Glob
+license: MIT
 metadata:
+  description_en: Export source video with frame-accurate AIpi shot notes, dialogue, director analysis and reshoot guidance.
+  version: "1.0.1"
+  author: AIπ
+  display_name: AI圆周派 · 同步审片
   brand: AI圆周派
   dependencies: Node.js 22 or newer, FFmpeg, ffprobe, Chrome or Chromium
 ---
@@ -19,6 +18,8 @@ metadata:
 ## 首次使用
 
 用当前技能所在文件夹作为 `{skill}`。确认当前宿主可调用Node.js 22或更高版本、FFmpeg、ffprobe及Chrome/Chromium。浏览器用于生成独立的静态信息面板，不接管用户正在使用的窗口。准备能显示中文的字体。
+
+首次在 Codex、Claude Code、WorkBuddy 或其他宿主运行时先读 [安装与宿主检查](references/host-setup.md)。安装技能不会自动安装这些工具，云端执行环境也不会直接继承本机依赖。
 
 ## 导出流程
 

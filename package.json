@@ -1,6 +1,6 @@
 {
   "name": "aipi-film-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "AIπ｜AI圆周派：逐镜拉片与同步审片工具",
   "author": "AIπ（AI圆周派）",
@@ -12,6 +12,7 @@
     "test:ui": "node skills/aipi-film-study/tests/ui-check.mjs",
     "test:sync": "node skills/aipi-sync-video/tests/verify.mjs",
     "demo": "node examples/create-demo.mjs",
+    "case": "node examples/build-case.mjs",
     "package": "python3 scripts/package.py"
   }
 }

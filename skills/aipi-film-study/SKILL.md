@@ -1,13 +1,12 @@
 ---
 name: aipi-film-study
-display_name: AI圆周派 · 逐镜拉片
 description: 以AIπ工作台逐镜分析成片，按真实帧时间保留每次切换，核对完整语言记录，编写导演解读和复拍方案，导出播放联动的报告、镜头表与字幕。适用于短剧拉片、视听学习和制作参考。
-description_zh: 逐镜画面与对白核对、导演解读、复拍建议及可播放的AIπ审片工作台。
-description_en: Frame-based film study with complete dialogue review, director notes, reshoot guidance, and an interactive AIpi review workspace.
-version: 1.0.0
-author: AIπ
-allowed-tools: Read, Write, Edit, Bash, Glob
+license: MIT
 metadata:
+  description_en: Frame-based film study with complete dialogue review, director notes, reshoot guidance, and an interactive AIpi review workspace.
+  version: "1.0.1"
+  author: AIπ
+  display_name: AI圆周派 · 逐镜拉片
   brand: AI圆周派
   runtime: Node.js 18 or newer
   dependencies: FFmpeg and ffprobe; a browser for report review
@@ -45,4 +44,4 @@ metadata:
 
 需要同步视频时使用 `aipi-sync-video`，传入同一份最终 `study.json`。修改台词或切点后重新生成所有受影响文件。需要XLSX时使用当前宿主可用的表格工具从相同数据转换；本技能不内置特定宿主的办公运行时。
 
-首次在WorkBuddy运行时先读 [安装与宿主检查](references/host-setup.md)。最终汇报真实输出、检查范围及尚未解决的声音问题，不能把命令成功等同于内容无遗漏。
+首次在新宿主运行时先读 [安装与宿主检查](references/host-setup.md)，适用于 Codex、Claude Code、WorkBuddy 及其他支持本地技能的代理。最终汇报真实输出、检查范围及尚未解决的声音问题，不能把命令成功等同于内容无遗漏。

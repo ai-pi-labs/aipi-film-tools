@@ -1,26 +1,65 @@
-# 安装与依赖
+# 安装总览
 
-## WorkBuddy
+先选宿主，再按对应入口安装。技能负责工作流程与脚本；Node.js、FFmpeg、Chrome 等工具需要在**实际执行命令的环境**里准备好。
 
-从仓库 Releases 下载两个独立 ZIP，通过“技能 → 添加技能 → 上传技能”导入，在已安装列表启用。每个包的根目录都是 SKILL.md，无需添加外层目录。
+| 使用环境 | 安装方式 | 使用指南 |
+| --- | --- | --- |
+| Codex 桌面本地任务、CLI、IDE 扩展 | 复制两个技能目录到 `~/.agents/skills/` 或项目 `.agents/skills/`；也可使用内置安装器 | [Codex](codex.md) |
+| Claude Code | 复制到 `~/.claude/skills/` 或项目 `.claude/skills/` | [Claude Code](claude.md) |
+| Claude 网页、普通桌面聊天、Cowork | 在技能管理入口上传 `*-claude.zip`；运行依赖以会话环境检查为准 | [Claude 各入口差异](claude.md) |
+| WorkBuddy | 从技能管理入口导入平铺 ZIP，并启用 | [WorkBuddy](workbuddy.md) |
+| Cursor | 项目 `.cursor/skills/` 或个人 `~/.cursor/skills/` | [其他宿主](other-hosts.md) |
+| VS Code GitHub Copilot | 项目 `.github/skills/` 或个人 `~/.copilot/skills/` | [其他宿主](other-hosts.md) |
+| 其他支持 Agent Skills 的本地代理 | 按其文档加载完整技能目录，再检查文件与命令能力 | [通用适配](other-hosts.md) |
 
-具体安装目录以 WorkBuddy 实际管理的位置为准。执行命令时从加载的 SKILL.md 位置定位 scripts，不套用其他应用的隐藏配置路径。[WorkBuddy 技能市场说明](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market) · [技能开发文档](https://open.workbuddy.cn/docs/skill)
+各宿主的官方依据列在对应指南。格式兼容不等于每个平台的客户端都已实测。
 
-项目已验证 ZIP 结构及解压后运行，未声称已在 WorkBuddy 客户端完成导入验收。首次运行建议先使用仓库的合成演示。
+## 下载哪个文件
 
-## 运行工具
+从 [最新 Release](https://github.com/ai-pi-labs/aipi-film-tools/releases/latest) 下载：
 
-| 用途 | 工具 |
-| --- | --- |
-| 拉片核心 | Node.js 18+、FFmpeg、ffprobe |
-| 同步导出 | Node.js 22+、FFmpeg、ffprobe、Chrome/Chromium |
-| 完整开发与网页回归 | Node.js 22+、FFmpeg、ffprobe、Chrome/Chromium |
-| 制作安装 ZIP | Python 3 标准库 |
+| 附件 | 适用方式 | 解压后结构 |
+| --- | --- | --- |
+| `aipi-film-study.zip` | WorkBuddy 专用导入 | 根目录有 `SKILL.md` |
+| `aipi-sync-video.zip` | 同上 | 根目录有 `SKILL.md` |
+| `aipi-film-study-claude.zip` | Claude 技能上传；Codex 等也可解压安装完整文件夹 | `aipi-film-study/SKILL.md` |
+| `aipi-sync-video-claude.zip` | 同上 | `aipi-sync-video/SKILL.md` |
+| `aipi-demo-case.zip` | 完整演示案例，无需作为技能安装 | `aipi-demo-case/` 内含视频、数据、报告、表格、字幕与同步视频 |
+| `SHA256SUMS`、`manifest.json` | 核对四个技能包与包内文件 | 校验文本 |
+| `aipi-demo-case.sha256` | 核对案例包 | 校验文本 |
 
-先在宿主实际执行环境中运行 `node --version`、`ffmpeg -version`、`ffprobe -version`。同步工具支持 `--chrome` 指定浏览器可执行文件，也支持 `AIPI_CHROME` 环境变量。准备可显示中文的字体，例如系统中文字体或 Noto Sans CJK。
+两种技能 ZIP 的执行脚本和工作流正文相同。平铺包为 WorkBuddy 额外加入根级 `description_zh`、`description_en`、`version`、`author` 等字段；源码目录和带顶层目录的包使用标准 `metadata`。不要把整个源码仓库 ZIP 当作一个技能导入，也不要把两个技能解压进同一个文件夹。正确目录关系为：
 
-浏览器使用独立临时配置渲染静态面板，不接管日常浏览窗口。技能不包含语音识别、字幕识别或在线服务凭据；这些能力按宿主已有能力配置。原片、报告与中间文件保存在调用者选定的工作目录。
+```text
+宿主的技能根目录/
+├── aipi-film-study/
+│   ├── SKILL.md
+│   ├── scripts/
+│   ├── references/
+│   └── ui/
+└── aipi-sync-video/
+    ├── SKILL.md
+    ├── scripts/
+    ├── references/
+    └── ui/
+```
 
-## 发布包与源码
+## 从安装到首次使用
 
-下载安装 ZIP 即可导入技能。要修改代码，克隆或下载完整仓库，编辑 `skills/` 内文件，再执行 `npm run package` 生成新的 ZIP。不要把测试运行生成的浏览器配置、用户影片或本地环境文件加入发布包。
+1. 按 [运行环境](prerequisites.md) 检查 Node.js 22+、FFmpeg、ffprobe；同步视频另需 Chrome/Chromium 和中文字体。
+2. 按宿主指南安装两个技能，开启一个能执行命令、读写项目文件的任务。
+3. 先让代理报告实际加载的 `SKILL.md` 路径，并执行两个入口的 `--help`。
+4. 按 [使用流程](usage.md) 处理影片，或先下载 [完整案例](case-study.md) 看结果。
+5. 生产交付前完成画面与声音核对；命令成功并不证明对白没有遗漏。
+
+## 更新与卸载
+
+记录最初安装的目录和版本（`SKILL.md` 中的 `metadata.version`）。升级时先把自己修改过的技能目录移到技能扫描范围外备份，再整体替换该目录，避免旧文件残留或同名技能重复出现。只在一个选定的用户级或项目级目录安装同一技能。
+
+上传型宿主按其实际更新/卸载入口操作；目录型宿主移除对应的两个技能文件夹即可。素材、报告和同步视频存放在独立项目目录，卸载技能不会要求删除它们。
+
+## 验证范围
+
+核心及报告契约在 macOS 本机与 Linux CI 验证；同步导出、浏览器交互与完整案例在本机验证。Claude、WorkBuddy、Cursor、Copilot 的安装路线依据官方文档整理，未逐一完成客户端内端到端验收。Windows、WSL、容器和远程机器需要各自执行最小验证。
+
+[返回首页](../README.md) · [使用流程与提示词](usage.md) · [完整案例](case-study.md)

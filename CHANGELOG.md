@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1
+
+- 补充 Codex、Claude Code、Claude 网页/桌面/Cowork、WorkBuddy、Cursor、VS Code Copilot 的安装、调用、更新和排错说明。
+- 新增公共使用流程、运行环境检查，以及带报告、数据与同步视频的完整合成案例。
+- 增加标准格式的 Claude 顶层目录 ZIP，以及补齐专用元数据的 WorkBuddy 平铺包；验证执行代码、工作流正文一致和解压入口。
+- 将扩展元数据收进标准 metadata 字段，随包携带多宿主首次运行说明。
+
 ## 1.0.0
 
 - 发布 AIπ｜AI圆周派逐镜拉片和同步审片两个技能。
