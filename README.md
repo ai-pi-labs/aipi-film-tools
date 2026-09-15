@@ -7,7 +7,7 @@
 <p align="center"><strong>逐镜读懂画面，把分析带到拍摄现场。</strong><br>Shot by shot. From study to reshoot.</p>
 
 <p align="center">
-  <a href="https://github.com/ai-pi-labs/aipi-film-tools/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ai-pi-labs/aipi-film-tools?style=flat-square&amp;label=release&amp;color=ca9442"></a>
+  <a href="https://github.com/ai-pi-labs/aipi-film-tools/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ai-pi-labs/aipi-film-tools?style=flat-square&amp;label=release&amp;color=996725"></a>
   <a href="LICENSE"><img alt="Code license: MIT" src="https://img.shields.io/badge/code-MIT-343c47?style=flat-square"></a>
   <a href="docs/installation.md"><img alt="Codex · Claude · WorkBuddy" src="https://img.shields.io/badge/Codex%20%C2%B7%20Claude%20%C2%B7%20WorkBuddy-skills-343c47?style=flat-square"></a>
 </p>

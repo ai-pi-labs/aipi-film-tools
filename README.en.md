@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ai-pi-labs/aipi-film-tools/releases/latest"><img src="https://img.shields.io/github/v/release/ai-pi-labs/aipi-film-tools?style=flat-square&amp;label=release&amp;color=ca9442" alt="Latest release"></a>
+  <a href="https://github.com/ai-pi-labs/aipi-film-tools/releases/latest"><img src="https://img.shields.io/github/v/release/ai-pi-labs/aipi-film-tools?style=flat-square&amp;label=release&amp;color=996725" alt="Latest release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-343c47?style=flat-square" alt="Code license: MIT"></a>
 </p>
 
