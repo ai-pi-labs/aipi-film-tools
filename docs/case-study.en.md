@@ -37,7 +37,9 @@ The workbench keeps one shot per row. Each row shows its time range, duration, r
 
 ## Synchronized review video
 
-![Guiwu Town, Episode 1 · Synchronized review video](case-sync-preview.png)
+Watch a 20-second excerpt below, or use fullscreen to read the analysis. The complete video is included in the delivery package.
+
+https://github.com/user-attachments/assets/1bc328aa-76be-46f8-963d-f42e6e55c0a1
 
 The source video plays above the corresponding visual observations, dialogue, director's notes, and reshooting suggestions. The review video preserves the original aspect ratio, audio, and pace. Pause when a shot has more text to read. Use it for focused viewing, group discussion, or reshooting preparation.
 
